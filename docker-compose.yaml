@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: bisnis_db
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: db_bisnis
+      MYSQL_USER: bisnis_user
+      MYSQL_PASSWORD: bisnis_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - bisnis_network
+
+  bisnis_service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bisnis_service
+    ports:
+      - "8080:8080"
+    networks:
+      - bisnis_network
+    depends_on:
+      - mysql
+    
+networks:
+  bisnis_network:
+    driver: bridge
+
+volumes:
+  db_data:
