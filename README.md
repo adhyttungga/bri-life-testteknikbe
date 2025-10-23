@@ -27,8 +27,6 @@ To start the gRPC server, execute the following command:
 ```
 The server will start as docker container and listen on a specified port (e.g., ":8080")
 
-===
-
 ### *Note
 1. Alasan menggunakan clean architecture:
 Saya menggunakan Clean Architecture karena memudahkan dalam membangun aplikasi yang maintainable, testable, dan scalable. Hal tersebut diperoleh dengan memisahkan masalah ke dalam beberapa layer. Clean Architecture menjadikan logika bisnis independen dari faktor lain seperti database atau framework UI.  Pemisahan tersebut mengurangi dampam modifikasi di satu area dengan area lain dan meningkatkan kemampuan adaptasi terhadap kebutuhan bisnis.
@@ -40,3 +38,5 @@ Alasan dibalik penggunaam RESTful API karena popularitasnya dalam pengembangan w
 - Statelessness (server tidak menyimpan context dari client)
 - Caching Capabilities
 - Security
+
+3. [Jawban Test Analisis Database](https://github.com/adhyttungga/bri-life-testteknikbe/blob/dev/bri-life-testanalisidb.sql)
